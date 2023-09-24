@@ -2,7 +2,7 @@ import express from 'express'
 import router from './Routes/index.js'
 
 const app = express()
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 
 const users = [
     {
@@ -19,7 +19,7 @@ const users = [
 
 app.use(express.json())
 
-
+c
 app.use('/',(req,res,next)=>{
     console.log("comes ....");
     next()
