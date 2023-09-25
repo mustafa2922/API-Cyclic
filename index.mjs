@@ -19,7 +19,6 @@ const users = [
 
 app.use(express.json())
 
-c
 app.use('/',(req,res,next)=>{
     console.log("comes ....");
     next()
