@@ -1,5 +1,13 @@
 import express from 'express'
 import router from './Routes/index.js'
+import mongoose from './db/index.js'
+
+
+const db = mongoose.connection;
+db.on('error',console.error.bind(console,"connection error:"));
+db.once('open',function(){
+    console.log("db connected!")
+})
 
 const app = express()
 const PORT = process.env.PORT || 8000

@@ -18,4 +18,9 @@ router.get('/', (req, res) => {
     res.send({user: users })
 })
 
+router.post('/',(req,res)=>{
+    console.log("req--->",req.body)
+    res.status(200).send({status:200 ,message:"success"})
+})
+
 export default router
