@@ -19,6 +19,10 @@ const UserShema = new Schema({
     address:{
         type:Schema.Types.String,
         required:true
+    },
+    password:{
+        type:Schema.Types.String,
+        required:true
     }
 })
 
