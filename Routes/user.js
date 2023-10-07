@@ -1,4 +1,5 @@
 import express from 'express'
+import User from '../models/User.js'
 const router = express.Router()
 
 const users = [
@@ -18,9 +19,11 @@ router.get('/', (req, res) => {
     res.send({user: users })
 })
 
-router.post('/',(req,res)=>{
-    console.log("req--->",req.body)
-    res.status(200).send({status:200 ,message:"success"})
+router.post('/',async (req,res)=>{
+    console.log("req--->",req.body);
+    const user = new User(req.body);
+    user.save(  )
+    res.status(200).send({status:200 ,message:"success"});
 })
 
 export default router
